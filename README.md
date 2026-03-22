@@ -1,30 +1,16 @@
-# HR-Analytics-SQL-Project
+## HR-Analytics-SQL-Project
 
-/**
-* You can copy, modify, distribute and perform the work, even for commercial purposes, 
-* all without asking permission. 
-* 
-* @Author: Rahul Tiwari
-*/
-
-DROP SCHEMA
-
-IF EXISTS hr;
-	CREATE SCHEMA hr COLLATE = utf8_general_ci;
-
-USE hr;
-
-/* *************************************************************** 
+##/* *************************************************************** 
 ***************************CREATING TABLES************************
 **************************************************************** */
 
-
+## regains table
 CREATE TABLE regions (
 	region_id INT (11) UNSIGNED NOT NULL,
 	region_name VARCHAR(25),
 	PRIMARY KEY (region_id)
 	);
-
+## countries tabl
 CREATE TABLE countries (
 	country_id CHAR(2) NOT NULL,
 	country_name VARCHAR(40),
@@ -32,7 +18,7 @@ CREATE TABLE countries (
 	PRIMARY KEY (country_id)
 );
 
-
+## locations table
 CREATE TABLE locations (
 	location_id INT (11) UNSIGNED NOT NULL AUTO_INCREMENT,
 	street_address VARCHAR(40),
@@ -42,7 +28,7 @@ CREATE TABLE locations (
 	country_id CHAR(2) NOT NULL,
 	PRIMARY KEY (location_id)
 	);
-
+## departments table
 CREATE TABLE departments (
 	department_id INT (11) UNSIGNED NOT NULL,
 	department_name VARCHAR(30) NOT NULL,
@@ -50,7 +36,7 @@ CREATE TABLE departments (
 	location_id INT (11) UNSIGNED,
 	PRIMARY KEY (department_id)
 	);
-
+ ## jobs table
 CREATE TABLE jobs (
 	job_id VARCHAR(10) NOT NULL,
 	job_title VARCHAR(35) NOT NULL,
@@ -58,7 +44,7 @@ CREATE TABLE jobs (
 	max_salary DECIMAL(8, 0) UNSIGNED,
 	PRIMARY KEY (job_id)
 	);
-
+## employees TABLE
 CREATE TABLE employees (
 	employee_id INT (11) UNSIGNED NOT NULL,
 	first_name VARCHAR(20),
@@ -73,7 +59,7 @@ CREATE TABLE employees (
 	department_id INT (11) UNSIGNED,
 	PRIMARY KEY (employee_id)
 	);
-
+## job_history TABLE
 CREATE TABLE job_history (
 	employee_id INT (11) UNSIGNED NOT NULL,
 	start_date DATE NOT NULL,
@@ -87,7 +73,7 @@ ALTER TABLE job_history ADD UNIQUE INDEX (
 	start_date
 	);
 
-
+##
 CREATE VIEW emp_details_view
 AS
 SELECT e.employee_id,
@@ -118,9 +104,11 @@ WHERE e.department_id = d.department_id
 	AND c.region_id = r.region_id
 	AND j.job_id = e.job_id;
 
-/* *************************************************************** 
+## /* *************************************************************** 
 ***************************INSERTING DATA*************************
 **************************************************************** */
+
+
 INSERT INTO regions
 VALUES (
 	1,
