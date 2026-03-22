@@ -17,9 +17,11 @@ CREATE TABLE countries (
 	country_name VARCHAR(40),
 	region_id INT (11) UNSIGNED NOT NULL,
 	PRIMARY KEY (country_id)
-); ```sql
+);
+ ```sql
 
 ## locations table
+```sql
 CREATE TABLE locations (
 	location_id INT (11) UNSIGNED NOT NULL AUTO_INCREMENT,
 	street_address VARCHAR(40),
@@ -29,7 +31,9 @@ CREATE TABLE locations (
 	country_id CHAR(2) NOT NULL,
 	PRIMARY KEY (location_id)
 	);
+```sql
 ## departments table
+```sql
 CREATE TABLE departments (
 	department_id INT (11) UNSIGNED NOT NULL,
 	department_name VARCHAR(30) NOT NULL,
@@ -37,6 +41,7 @@ CREATE TABLE departments (
 	location_id INT (11) UNSIGNED,
 	PRIMARY KEY (department_id)
 	);
+```sql
  ## jobs table
 CREATE TABLE jobs (
 	job_id VARCHAR(10) NOT NULL,
@@ -45,6 +50,7 @@ CREATE TABLE jobs (
 	max_salary DECIMAL(8, 0) UNSIGNED,
 	PRIMARY KEY (job_id)
 	);
+```sql
 ## employees TABLE
 CREATE TABLE employees (
 	employee_id INT (11) UNSIGNED NOT NULL,
@@ -59,7 +65,7 @@ CREATE TABLE employees (
 	manager_id INT (11) UNSIGNED,
 	department_id INT (11) UNSIGNED,
 	PRIMARY KEY (employee_id)
-	);
+	);```sql
 ## job_history TABLE
 CREATE TABLE job_history (
 	employee_id INT (11) UNSIGNED NOT NULL,
