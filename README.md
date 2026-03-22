@@ -1,6 +1,6 @@
 ## HR-Analytics-SQL-Project
 
-###  /****************************CREATING TABLES*************************/***
+### /****************************CREATING TABLES*************************/***
 
 ## regains table
 ```sql
