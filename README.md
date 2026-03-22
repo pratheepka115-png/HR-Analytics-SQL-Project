@@ -2633,18 +2633,18 @@ VALUES (
  
  ### *************************************************************** 
 ***************************FOREIGN KEYS***************************
-**************************************************************** */
+****************************************************************
 
-***ALTER TABLE countries ADD FOREIGN KEY (region_id) REFERENCES regions(region_id);    
-ALTER TABLE locations ADD FOREIGN KEY (country_id) REFERENCES countries(country_id);
-ALTER TABLE departments ADD FOREIGN KEY (location_id) REFERENCES locations(location_id);
-ALTER TABLE employees ADD FOREIGN KEY (job_id) REFERENCES jobs(job_id);
-ALTER TABLE employees ADD FOREIGN KEY (department_id) REFERENCES departments(department_id);
-ALTER TABLE employees ADD FOREIGN KEY (manager_id) REFERENCES employees(employee_id);
-ALTER TABLE departments ADD FOREIGN KEY (manager_id) REFERENCES employees (employee_id);
-ALTER TABLE job_history ADD FOREIGN KEY (employee_id) REFERENCES employees(employee_id);
-ALTER TABLE job_history ADD FOREIGN KEY (job_id) REFERENCES jobs(job_id);
-ALTER TABLE job_history ADD FOREIGN KEY (department_id) REFERENCES departments(department_id);***
+***ALTER TABLE countries ADD FOREIGN KEY (region_id) REFERENCES regions(region_id);***   
+***ALTER TABLE locations ADD FOREIGN KEY (country_id) REFERENCES countries(country_id);***
+***ALTER TABLE departments ADD FOREIGN KEY (location_id) REFERENCES locations(location_id);***
+***ALTER TABLE employees ADD FOREIGN KEY (job_id) REFERENCES jobs(job_id);***
+***ALTER TABLE employees ADD FOREIGN KEY (department_id) REFERENCES departments(department_id);***
+***ALTER TABLE employees ADD FOREIGN KEY (manager_id) REFERENCES employees(employee_id);***
+***ALTER TABLE departments ADD FOREIGN KEY (manager_id) REFERENCES employees (employee_id);***
+***ALTER TABLE job_history ADD FOREIGN KEY (employee_id) REFERENCES employees(employee_id);***
+***ALTER TABLE job_history ADD FOREIGN KEY (job_id) REFERENCES jobs(job_id);***
+***ALTER TABLE job_history ADD FOREIGN KEY (department_id) REFERENCES departments(department_id);***
 
 
 
@@ -2670,8 +2670,9 @@ SELECT last_name, salary FROM employees WHERE salary > 12000;
 ### Q5. Create a query which will display the last name and the department number for employee id 176.
 ```sql
 SELECT last_name, department_id FROM employees WHERE employee_id = 176;
-	````
+````
 ### Q6. The HR department is looking for all the employees whose salary is in the range of $2000 and $4500. Write a query to get the output for business.
+
 ```sql
 SELECT last_name, salary FROM employees WHERE salary BETWEEN 2000 AND 4500;
 ```
@@ -2985,7 +2986,9 @@ SELECT department_id
 FROM departments 
 WHERE department_id NOT IN (SELECT department_id FROM employees WHERE job_id = 'ST_CLERK');
 ```
-### Q51. Create a query using regular expressions to search in the employees table. Look for all the employees whose first name is ```sql
+### Q51. Create a query using regular expressions to search in the employees table. Look for all the employees whose first name is. 
+
+```sql
 starting with either 'Ne' or 'Na'.
 SELECT first_name, last_name 
 FROM employees 
