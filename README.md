@@ -5,6 +5,7 @@
 **************************************************************** */
 
 ## regains table
+```sql
 CREATE TABLE regions (
 	region_id INT (11) UNSIGNED NOT NULL,
 	region_name VARCHAR(25),
@@ -16,7 +17,7 @@ CREATE TABLE countries (
 	country_name VARCHAR(40),
 	region_id INT (11) UNSIGNED NOT NULL,
 	PRIMARY KEY (country_id)
-);
+); ```sql
 
 ## locations table
 CREATE TABLE locations (
